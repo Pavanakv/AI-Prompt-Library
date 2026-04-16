@@ -1,0 +1,35 @@
+<div style="max-width: 600px; margin: 40px auto; font-family: Arial;">
+
+  <h1 style="text-align: center;">🚀 Prompt Library</h1>
+
+  <!-- Loading -->
+  <div *ngIf="prompts === null" style="text-align: center;">
+    <p>Loading...</p>
+  </div>
+
+  <!-- Data -->
+  <div *ngIf="prompts !== null">
+
+    <button routerLink="/add"
+  style="margin-bottom: 20px; padding: 10px 15px; background: #28a745; color: white; border: none; border-radius: 5px;">
+  ➕ Add Prompt
+</button>
+
+   <div *ngFor="let prompt of prompts"
+     (click)="goToDetail(prompt.id)"
+     style="cursor:pointer; border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 10px; transition: 0.3s;"
+     onmouseover="this.style.transform='scale(1.02)'"
+     onmouseout="this.style.transform='scale(1)'">
+
+  <h3>{{ prompt.title }}</h3>
+  <p>{{ prompt.content }}</p>
+
+  <span style="background: #007bff; color: white; padding: 5px 10px; border-radius: 5px;">
+    Complexity: {{ prompt.complexity }}
+  </span>
+
+</div>
+
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div style="max-width: 500px; margin: 40px auto; font-family: Arial;">
+
+  <h2>Add Prompt</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <!-- Title -->
+    <input type="text" placeholder="Title"
+      formControlName="title"
+      style="width: 100%; padding: 10px; margin: 10px 0;" />
+
+    <div *ngIf="form.controls.title.touched && form.controls.title.invalid" style="color:red;">
+      Title must be at least 3 characters
+    </div>
+
+    <!-- Content -->
+    <textarea placeholder="Content"
+      formControlName="content"
+      style="width: 100%; padding: 10px; margin: 10px 0;"></textarea>
+
+    <div *ngIf="form.controls.content.touched && form.controls.content.invalid" style="color:red;">
+      Content must be at least 20 characters
+    </div>
+
+    <!-- Complexity -->
+    <input type="number" formControlName="complexity"
+      style="width: 100%; padding: 10px; margin: 10px 0;" />
+
+    <div *ngIf="form.controls.complexity.invalid" style="color:red;">
+      Complexity must be between 1 and 10
+    </div>
+
+    <!-- Button -->
+    <button type="submit"
+      style="background: #007bff; color: white; padding: 10px; border: none;">
+      Add Prompt
+    </button>
+
+  </form>
+
+</div>

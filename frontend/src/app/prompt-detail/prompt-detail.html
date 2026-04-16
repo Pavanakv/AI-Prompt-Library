@@ -1,0 +1,26 @@
+<div style="max-width: 700px; margin: 50px auto; font-family: Arial;">
+
+  <button routerLink="/" style="margin-bottom: 20px;">
+    ⬅ Back
+  </button>
+
+  <div *ngIf="prompt === null">
+    <p>Loading...</p>
+  </div>
+
+  <div *ngIf="prompt !== null">
+       style="border: 1px solid #ddd; padding: 20px; border-radius: 10px;">
+
+    <h2>{{ prompt.title }}</h2>
+
+    <p style="margin: 15px 0;">{{ prompt.content }}</p>
+
+    <p><b>Complexity:</b> {{ prompt.complexity }}</p>
+
+    <p style="color: green;">
+      👁 Views: {{ prompt.view_count }}
+    </p>
+
+  </div>
+
+</div>

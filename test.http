@@ -1,0 +1,8 @@
+POST http://127.0.0.1:8000/api/prompts/
+Content-Type: application/json
+
+{
+  "title": "Cyberpunk City",
+  "content": "A futuristic neon city with flying cars and robots",
+  "complexity": 5
+}
